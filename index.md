@@ -15,11 +15,11 @@ subscription.
 This site hosts the documentation Google Play and our users need to make
 informed decisions about their data.
 
-- **[Privacy Policy](privacy.html)** — what we collect, where it goes, how
-  long we keep it, and how to opt out.
-- **[Account Deletion](delete-account.html)** — how to permanently delete
-  your Sously account and every piece of data we hold for you, in-app or by
-  emailing us.
+- **[Privacy Policy]({{ '/privacy/' | relative_url }})** — what we collect,
+  where it goes, how long we keep it, and how to opt out.
+- **[Account Deletion]({{ '/delete-account/' | relative_url }})** — how to
+  permanently delete your Sously account and every piece of data we hold for
+  you, in-app or by emailing us.
 
 For everything else, contact **support@sacredspawns.com**.
 

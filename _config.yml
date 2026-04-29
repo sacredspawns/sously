@@ -17,8 +17,8 @@ theme: jekyll-theme-cayman
 # Suppress the auto-generated GitHub footer if you want.
 show_downloads: false
 
-# These are referenced by the in-app links and the Play Console listing —
-# changing them means updating both places.
-permalinks:
-  - /privacy
-  - /delete-account
+# Public URLs are declared per-page via `permalink:` front matter:
+#   /privacy/         (privacy.md)
+#   /delete-account/  (delete-account.md)
+# These are referenced by in-app links and the Play Console listing —
+# if you change them, update both places.
