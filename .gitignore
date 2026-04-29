@@ -1,0 +1,16 @@
+# Jekyll local-build artifacts. GitHub Pages builds remotely; nothing here
+# needs to be committed. If you ever run `bundle exec jekyll serve` for a
+# local preview, _site is the generated output.
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+.bundle/
+vendor/
+Gemfile.lock
+
+# OS / editor noise
+.DS_Store
+.idea/
+.vscode/
+*.swp

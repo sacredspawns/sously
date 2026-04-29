@@ -1,0 +1,24 @@
+# GitHub Pages config for the public Sously documentation site.
+# Renders Markdown files at the repo root as Jekyll pages with clean URLs.
+#
+# Theme:
+#   `cayman` — clean, minimal, fits a single-page docs site.
+#   Swap to any of the supported GitHub Pages themes if you prefer:
+#     https://pages.github.com/themes/
+#
+# Once pushed to a public repo (e.g. github.com/sacredspawns/sously) and Pages
+# is enabled (Settings → Pages → "Deploy from a branch" → main / root),
+# the site is live at https://sacredspawns.github.io/sously/ within ~60s.
+
+title: Sously
+description: A meal-planning kitchen co-pilot by Sacred Spawns.
+theme: jekyll-theme-cayman
+
+# Suppress the auto-generated GitHub footer if you want.
+show_downloads: false
+
+# These are referenced by the in-app links and the Play Console listing —
+# changing them means updating both places.
+permalinks:
+  - /privacy
+  - /delete-account
