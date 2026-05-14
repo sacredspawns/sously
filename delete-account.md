@@ -7,10 +7,13 @@ permalink: /delete-account/
 # Sously — Account deletion
 
 **Effective date:** 2026-04-28
+**Last updated:** 2026-05-14
 **Publisher:** Sacred Spawns
 **Contact:** [support@sacredspawns.com](mailto:support@sacredspawns.com)
 
-This page explains how to delete your Sously account and all associated data.
+This page explains how to delete your Sously account and all associated
+data. The instructions apply identically to the Android and iOS versions
+of Sously.
 
 ---
 
@@ -66,14 +69,27 @@ subscription, but they keep all your shared cooking data.
 
 ## What does NOT get deleted automatically
 
-**Your Sously Pro subscription does not cancel automatically.** If you have
-an active subscription, you must cancel it separately:
+**Your Sously Pro subscription does not cancel automatically.** Subscriptions
+live with the store you purchased through (Google or Apple), not with us — we
+can't cancel them on your behalf, and account deletion does not stop renewals.
+If you have an active subscription, you must cancel it separately:
 
-- **Android (Google Play):** open Play Store → tap your profile → Payments
-  & subscriptions → Subscriptions → Sously → Cancel.
+- **Android (Google Play):** open the Play Store app → tap your profile photo
+  → **Payments & subscriptions** → **Subscriptions** → **Sously** → **Cancel
+  subscription**. Or visit
+  [play.google.com/store/account/subscriptions](https://play.google.com/store/account/subscriptions)
+  on the web.
+- **iOS (App Store):** open **Settings** → tap **[your name]** at the top →
+  **Subscriptions** → **Sously** → **Cancel Subscription**. (Alternatively,
+  open the App Store app → tap your profile photo top-right → **Subscriptions**.)
+- **Mac:** open **App Store** → click your name (bottom-left) → **Account
+  Settings** → scroll to **Subscriptions** → **Manage** → **Sously** → **Cancel**.
 
-We do not refund payments made before deletion. Cancel your subscription
-**before** deleting your account if you want to avoid further charges.
+We do not issue refunds for payments made before deletion. Cancel your
+subscription **before** deleting your account if you want to avoid further
+charges. On Apple, refund requests go through Apple directly at
+[reportaproblem.apple.com](https://reportaproblem.apple.com); on Google, refund
+requests go through the Play Store entry above.
 
 ---
 

@@ -1,9 +1,8 @@
 # sously — public documentation site
 
-This repo hosts the public-facing documentation for the
-[Sously](https://play.google.com/store/apps/details?id=com.sacredspawns.sously)
-Android app — a privacy policy and account deletion page that Google Play
-Console and end users link to.
+This repo hosts the public-facing documentation for the **Sously** app
+(iOS + Android) — privacy policy, terms of use, and account deletion
+page that Apple, Google, and end users link to.
 
 The site is served by **GitHub Pages** straight from `main` branch root,
 no build step required.
@@ -14,15 +13,20 @@ Once deployed:
 
 - `https://sacredspawns.github.io/sously/` — landing page
 - `https://sacredspawns.github.io/sously/privacy/` — privacy policy
+- `https://sacredspawns.github.io/sously/terms/` — terms of use
 - `https://sacredspawns.github.io/sously/delete-account/` — account deletion instructions
 
 These exact URLs are referenced from:
-- The in-app `marketing/privacy-policy.md` cross-link in the Sously app source
+- The in-app Settings screen + paywall (both Android `:app` and the
+  Compose Multiplatform iOS surface)
 - Play Console → Data safety → Account deletion URL field
 - Play Console → Store listing → Privacy policy URL field
+- App Store Connect → App Information → Privacy Policy URL
+- App Store Connect → App Information → License Agreement URL
+- App Store Connect → App Privacy → Data Type disclosures (match `privacy.md`)
 
 If the URLs change (rename the repo, switch to a custom domain), update
-those three references too.
+those references too.
 
 ## One-time setup
 
@@ -59,7 +63,10 @@ look at it.
 ## Files
 
 - `index.md` — landing page
-- `privacy.md` — privacy policy (mirrors `marketing/privacy-policy.md` in
-  the app repo; keep them in sync if you edit either)
-- `delete-account.md` — account deletion explainer + email fallback
+- `privacy.md` — privacy policy (Android + iOS; mirrors the App Privacy
+  manifest at `iosApp/iosApp/PrivacyInfo.xcprivacy` in the app repo)
+- `terms.md` — terms of use (required by App Store Guideline 3.1.2(b)
+  for subscription apps; linked from the paywall on both platforms)
+- `delete-account.md` — account deletion explainer + email fallback;
+  covers both iOS App Store and Google Play subscription cancellation
 - `_config.yml` — Jekyll/Pages config (theme, title)

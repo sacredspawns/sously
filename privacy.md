@@ -7,14 +7,17 @@ permalink: /privacy/
 # Privacy Policy for Sously
 
 **Effective date:** 2026-04-28
-**Last updated:** 2026-04-28
+**Last updated:** 2026-05-14
 **Publisher:** Sacred Spawns
 **Contact:** [support@sacredspawns.com](mailto:support@sacredspawns.com)
-**App package:** com.sacredspawns.sously
+**App identifier (Android):** `com.sacredspawns.sously` (Google Play)
+**App identifier (iOS):** `com.sacredspawns.sously` (App Store)
 
 This policy explains what data Sously collects, why we collect it, where it
 goes, and how you can control it. We try to keep it short and specific.
-Scroll to the bottom for plain-English summaries.
+Scroll to the bottom for plain-English summaries. It applies identically to
+the Android and iOS versions of Sously; platform-specific differences are
+called out inline where they matter.
 
 ---
 
@@ -26,14 +29,18 @@ that triggers it, and where it lives.
 
 ### 1.1 Account information (only if you sign in)
 
-If you sign in with Google or email, we collect:
+If you sign in with Google, Apple, or email/password, we collect:
 
-* Your **Google user ID** (Firebase UID) so we can sync your library to
-  the cloud.
-* Your **email address** and **display name** as provided by Google
-  Sign-In.
-* The **device IDs** issued by Firebase Authentication / App Check to
-  verify that requests come from a real install of Sously on a real device.
+* Your **Firebase user ID** (UID) so we can sync your library to the cloud.
+* Your **email address** and **display name** as provided by Google Sign-In,
+  Sign in with Apple, or the email signup form. If you choose "Hide My
+  Email" with Sign in with Apple, we receive Apple's private relay address
+  and never see your real email.
+* The **device IDs** issued by Firebase Authentication, Play Integrity
+  (Android) / DeviceCheck (iOS), and App Check to verify that requests come
+  from a real install of Sously on a real device. These identifiers are
+  scoped to the Firebase project and cannot be used to track you across
+  apps.
 
 We do not collect or sell any other identifier. If you do not sign in,
 this section does not apply — you can use Sously as a fully local app.
@@ -96,10 +103,17 @@ or photo-library access.
 ### 1.5 Subscription and billing
 
 If you purchase Sously Pro, your purchase is processed by **Google Play
-Billing** and managed by **RevenueCat**. We receive a subscription
-status (active / inactive / lifetime) keyed to your Firebase user ID,
-plus enough metadata to show your tier in Settings. We do **not**
-receive your credit card or payment information.
+Billing** (Android) or **Apple's In-App Purchase system** (iOS), and
+managed end-to-end by **RevenueCat**. We receive a subscription status
+(active / inactive / lifetime), the SKU you purchased, and the
+renewal/expiration timestamp — all keyed to your Firebase user ID, so
+your Pro entitlement follows you across devices and platforms. We do
+**not** receive your credit card or payment information; that stays
+with Google or Apple.
+
+If you share a Sously household, your subscription status (only — not
+the SKU or pricing) is mirrored to the household record so the second
+member's app can see "shared Pro by [your display name]".
 
 RevenueCat's privacy policy: [https://www.revenuecat.com/privacy](https://www.revenuecat.com/privacy)
 
@@ -111,12 +125,15 @@ non-personally-identifiable breadcrumbs like which screen was open. We
 do not include the contents of your recipes, prompts, or photos in
 crash reports.
 
-### 1.7 Backups (local)
+### 1.7 Recipe URLs shared from other apps (iOS share extension)
 
-Sously can write a full backup of your local data to a folder you choose
-on your device, via Android's Storage Access Framework. This file never
-leaves your device unless you copy it yourself. Backup contents are
-unencrypted JSON; treat them like any other personal file.
+On iOS, Sously includes a share extension. When you tap **Share → Sously**
+on a recipe URL from any other app (Safari, Messages, Mail, etc.), that
+URL is parked in an app-group container and ingested by the main app on
+next launch. The shared URL is treated identically to a URL you paste
+into the recipe importer — see §1.3 (the AI tier uses Google's Gemini
+API; the Tier 1/2 importers process the page locally on your device).
+The URL itself is not retained by Sously after import completes.
 
 ### 1.8 What we do NOT collect
 
@@ -165,8 +182,8 @@ not run third-party analytics that profile you.
 
 You can, at any time:
 
-* **See your data** — everything is visible in the app's UI; the cloud
-  copy can be exported via Settings → Backup.
+* **See your data** — everything is visible in the app's UI. If you need a
+  copy of the cloud-stored data outside the app, email us and we'll provide it.
 * **Delete your data** — Settings → Account & Sync → Delete account
   triggers permanent deletion of your Firebase Auth record, every
   Firestore document under your user id, your cloud-stored recipe images,
@@ -215,8 +232,29 @@ use after a change is acceptance of the new policy.
 * AI features send your prompt (and any photo you attach) to Google's
   Gemini API and return a result. Google does not train on your data.
 * Camera + photo access is only when you tap the button.
-* We do not run ads, track you across apps, or sell your data.
+* We do not run ads, track you across apps, or sell your data. On iOS
+  we do not collect the IDFA, so the App Tracking Transparency prompt
+  never appears.
 * You can delete everything anytime, in-app or by emailing us.
+
+---
+
+## 8. iOS App Privacy nutrition label
+
+The data categories declared in this policy correspond to the following
+Apple App Privacy disclosures (visible on the App Store listing):
+
+| Category | Data | Linked to you? | Used for tracking? |
+|---|---|---|---|
+| Identifiers | User ID (Firebase UID) | Yes | No |
+| Contact Info | Email, name | Yes | No |
+| User Content | Recipes, photos, pantry data, meal plans | Yes | No |
+| Purchases | Subscription tier / status | Yes | No |
+| Diagnostics | Crash data | Yes | No |
+
+All of the above are collected for **App Functionality only**. Sously
+declares no tracking. The matching machine-readable manifest is bundled
+inside the iOS app at `PrivacyInfo.xcprivacy`.
 
 ---
 
