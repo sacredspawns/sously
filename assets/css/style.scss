@@ -1,0 +1,294 @@
+---
+# Front matter is required for Jekyll to process this as SCSS.
+# Empty content above; everything below is the actual stylesheet.
+---
+
+@import "{{ site.theme }}";
+
+/* ──────────────────────────────────────────────────────────────────────
+   Sously palette — sourced from the in-app SouslyTheme.kt brand tokens.
+   Sage primary, terracotta accent, oak tertiary, cream paper background.
+   ────────────────────────────────────────────────────────────────────── */
+
+$sage-primary:        #7A8B6F;
+$sage-deep:           #5A6B4F;
+$sage-container:      #DCE3D2;
+$sage-on-container:   #2E3A26;
+
+$terracotta:          #C5705D;
+$terracotta-deep:     #A55543;
+$terracotta-container:#F2D6CB;
+
+$oak:                 #A8825C;
+$oak-container:       #EADBC4;
+
+$cream-bg:            #FBF7EE;
+$paper-surface:       #FFFCF4;
+$sandstone:           #EFE8D8;
+$surface-low:         #F8F2E4;
+$surface:             #F5EFE0;
+
+$ink:                 #2A2620;
+$ink-muted:           #5A5247;
+$bark:                #B8AC95;
+$bark-soft:           #D8CDB4;
+
+$tomato-error:        #B23A2C;
+$tomato-container:    #F5D7D1;
+
+/* ──────────────────────────────────────────────────────────────────────
+   Page-wide typography + background.
+   Inter sans-serif for body. Fraunces serif for h1 (editorial cookbook).
+   ────────────────────────────────────────────────────────────────────── */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap");
+
+body {
+  background: $cream-bg;
+  color: $ink;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Helvetica, Arial, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   Header — replace cayman's blue gradient with a warm sage→oak gradient.
+   Add a small Sously wordmark prefix in the header for brand recall.
+   ────────────────────────────────────────────────────────────────────── */
+
+.page-header {
+  background-color: $sage-primary;
+  background-image: linear-gradient(
+    135deg,
+    $sage-deep 0%,
+    $sage-primary 45%,
+    $oak 100%
+  );
+  color: $cream-bg;
+  padding: 3rem 1rem 2.5rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(42, 38, 32, 0.08);
+}
+
+.project-name {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.4rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.3rem;
+  text-shadow: 0 1px 0 rgba(42, 38, 32, 0.18);
+}
+
+.project-tagline {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 1.05rem;
+  opacity: 0.92;
+  margin-bottom: 1.2rem;
+}
+
+/* Header button (Cayman ships a "View on GitHub" pill — restyle, don't hide).  */
+.btn {
+  background-color: rgba(255, 252, 244, 0.16);
+  color: $cream-bg;
+  border: 1px solid rgba(255, 252, 244, 0.42);
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: background-color 0.18s ease, border-color 0.18s ease,
+              transform 0.18s ease;
+  &:hover {
+    background-color: rgba(255, 252, 244, 0.28);
+    border-color: rgba(255, 252, 244, 0.65);
+    transform: translateY(-1px);
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   Main content — paper-surface card on cream page background.
+   ────────────────────────────────────────────────────────────────────── */
+
+.main-content {
+  background: $paper-surface;
+  color: $ink;
+  max-width: 760px;
+  margin: -1.5rem auto 3rem;
+  padding: 3rem 3.2rem;
+  border-radius: 14px;
+  border: 1px solid $bark-soft;
+  box-shadow: 0 4px 24px rgba(42, 38, 32, 0.06),
+              0 1px 2px rgba(42, 38, 32, 0.04);
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $ink;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    margin-top: 2.2rem;
+    margin-bottom: 0.8rem;
+  }
+  h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 2.1rem;
+    margin-top: 0;
+    color: $sage-on-container;
+    border-bottom: 1px solid $bark-soft;
+    padding-bottom: 0.6rem;
+  }
+  h2 {
+    font-size: 1.42rem;
+    color: $sage-deep;
+    border-bottom: none;
+  }
+  h3 {
+    font-size: 1.13rem;
+    color: $terracotta-deep;
+  }
+  h4 {
+    font-size: 0.98rem;
+    color: $ink-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  p, ul, ol {
+    color: $ink;
+    font-size: 1rem;
+  }
+  li {
+    margin-bottom: 0.35rem;
+  }
+
+  /* Links — sage with a smooth underline-on-hover. */
+  a {
+    color: $sage-deep;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(122, 139, 111, 0.35);
+    transition: color 0.15s ease, border-color 0.15s ease;
+    &:hover {
+      color: $terracotta-deep;
+      border-bottom-color: $terracotta;
+    }
+  }
+
+  /* Strong / em — Sously uses bolder strong than Cayman defaults. */
+  strong { color: $ink; font-weight: 600; }
+  em { color: $ink-muted; font-style: italic; }
+
+  /* Horizontal rule — replace the heavy default with a thin sage line. */
+  hr {
+    border: 0;
+    height: 1px;
+    background: $bark-soft;
+    margin: 2.4rem 0;
+  }
+
+  /* Blockquotes — terracotta accent rail for callouts (e.g. "Effective date:"). */
+  blockquote {
+    border-left: 3px solid $terracotta;
+    background: $terracotta-container;
+    color: $sage-on-container;
+    padding: 0.8rem 1.1rem;
+    margin: 1.4rem 0;
+    border-radius: 0 6px 6px 0;
+    font-style: normal;
+    p { margin: 0; }
+  }
+
+  /* Inline code + code blocks — sandstone bg, ink text, oak border. */
+  code {
+    background: $sandstone;
+    color: $sage-on-container;
+    border: 1px solid $bark-soft;
+    border-radius: 4px;
+    padding: 0.08em 0.42em;
+    font-family: "SF Mono", "Menlo", "Consolas", "Liberation Mono", monospace;
+    font-size: 0.88em;
+  }
+  pre {
+    background: $surface;
+    border: 1px solid $bark-soft;
+    border-radius: 8px;
+    padding: 1rem 1.1rem;
+    overflow-x: auto;
+    code {
+      background: transparent;
+      border: 0;
+      padding: 0;
+      color: $ink;
+    }
+  }
+
+  /* Tables — used in privacy.md §8 for the App Privacy disclosure grid. */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.4rem 0;
+    background: $paper-surface;
+    border: 1px solid $bark-soft;
+    border-radius: 8px;
+    overflow: hidden;
+    th {
+      background: $sage-container;
+      color: $sage-on-container;
+      font-weight: 600;
+      text-align: left;
+      padding: 0.65rem 0.9rem;
+      border-bottom: 1px solid $bark;
+    }
+    td {
+      padding: 0.55rem 0.9rem;
+      border-bottom: 1px solid $bark-soft;
+      color: $ink;
+    }
+    tr:last-child td { border-bottom: 0; }
+    tr:nth-child(even) td { background: $surface-low; }
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   Site footer — Cayman ships a "hosted on GitHub Pages" line.
+   Soften it to fit the cream theme.
+   ────────────────────────────────────────────────────────────────────── */
+
+.site-footer {
+  border-top: 1px solid $bark-soft;
+  color: $ink-muted;
+  font-size: 0.88rem;
+  text-align: center;
+  margin-top: 0;
+  padding: 1.6rem 1rem 2.4rem;
+  a {
+    color: $sage-deep;
+    text-decoration: none;
+    &:hover { color: $terracotta-deep; text-decoration: underline; }
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   Mobile tweaks — keep the card readable on small screens.
+   ────────────────────────────────────────────────────────────────────── */
+
+@media (max-width: 720px) {
+  .main-content {
+    padding: 1.6rem 1.2rem;
+    margin: -1rem 0.6rem 1.6rem;
+    border-radius: 10px;
+  }
+  .page-header { padding: 2.2rem 1rem 1.8rem; }
+  .project-name { font-size: 1.9rem; }
+  .project-tagline { font-size: 0.98rem; }
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   Selection color — small detail, but Cayman defaults to blue.
+   ────────────────────────────────────────────────────────────────────── */
+
+::selection {
+  background: $sage-container;
+  color: $sage-on-container;
+}
